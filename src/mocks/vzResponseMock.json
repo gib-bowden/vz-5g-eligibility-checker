@@ -1,0 +1,233 @@
+[
+    {
+      "data": {
+        "output": {
+          "qualified": false,
+          "reservation": null,
+          "emailAddress": null,
+          "addressLine1": "503 MILWAUKEE AVE",
+          "addressLine2": "",
+          "city": "LOS ANGELES",
+          "state": "CA",
+          "zipCode": "90042",
+          "reasonCode": "Non_Eligible",
+          "addressType": null,
+          "installType": null,
+          "floorToStreetsMap": {},
+          "phoneNumber": null,
+          "addressfromAccount": false,
+          "currentFloorNumber": null,
+          "eventCorrelationId": "90042_1655652740352_68",
+          "verifyE911Address": false,
+          "polylines": {},
+          "launchType": "CBAND",
+          "apartmentNumberRequired": false,
+          "floorPlanAvailable": false,
+          "addressMapStatus": null,
+          "maxFloor": null,
+          "buildingDetails": null,
+          "uberPinEligible": false,
+          "intersectionCoordinatesLst": null,
+          "coveragePercentage": null,
+          "equipType": null,
+          "addressDescriptorList": null,
+          "bundleNames": null,
+          "addressId": "300038540272",
+          "subLocationId": "300038540272",
+          "qualified4GHome": false,
+          "qualifiedCBand": true,
+          "preOrder5GFlow": false,
+          "preOrderLaunchDate": null,
+          "isExpiredCart": false,
+          "isStreetSelected": false,
+          "isRevisitor": false,
+          "uberPinQualificatioIsRequired": true,
+          "displayStreetSelection": false,
+          "mucOfferEligible": false,
+          "storeSessionId": "POE-D-0bac6852-e5e2-4850-b44e-0cf2790ba0e6{s3}"
+        },
+        "errorMap": null,
+        "statusMessage": "Service completed Successfully.",
+        "statusCode": "00"
+      }
+    },
+    {
+      "data": {
+        "output": {
+          "qualified": false,
+          "reservation": null,
+          "emailAddress": null,
+          "addressLine1": "313 CLEVELAND ST",
+          "addressLine2": "",
+          "city": "NASHVILLE",
+          "state": "TN",
+          "zipCode": "37207",
+          "reasonCode": "Non_Eligible",
+          "addressType": null,
+          "installType": null,
+          "floorToStreetsMap": {},
+          "phoneNumber": null,
+          "addressfromAccount": false,
+          "currentFloorNumber": null,
+          "eventCorrelationId": "37207_1655687353425_9",
+          "verifyE911Address": false,
+          "polylines": {},
+          "launchType": "4GH",
+          "apartmentNumberRequired": false,
+          "floorPlanAvailable": false,
+          "addressMapStatus": null,
+          "maxFloor": null,
+          "buildingDetails": null,
+          "uberPinEligible": false,
+          "intersectionCoordinatesLst": null,
+          "coveragePercentage": null,
+          "equipType": null,
+          "addressDescriptorList": null,
+          "bundleNames": null,
+          "addressId": "300118418827",
+          "subLocationId": "300118418827",
+          "qualified4GHome": true,
+          "qualifiedCBand": false,
+          "preOrder5GFlow": false,
+          "preOrderLaunchDate": null,
+          "isExpiredCart": false,
+          "isStreetSelected": false,
+          "isRevisitor": false,
+          "uberPinQualificatioIsRequired": true,
+          "displayStreetSelection": false,
+          "mucOfferEligible": false,
+          "storeSessionId": "POE-D-0bac6852-e5e2-4850-b44e-0cf2790ba0e6{s3}"
+        },
+        "errorMap": null,
+        "statusMessage": "Service completed Successfully.",
+        "statusCode": "00"
+      }
+    },
+    {
+      "data": {
+        "output": {
+          "qualified": true,
+          "reservation": null,
+          "emailAddress": null,
+          "addressLine1": "1620 BRIDGE ST",
+          "addressLine2": "1",
+          "city": "LOS ANGELES",
+          "state": "CA",
+          "zipCode": "90033",
+          "reasonCode": null,
+          "addressType": "MDU",
+          "installType": "INDOOR",
+          "floorToStreetsMap": {
+            "Floor 1": [
+              "Bridge Street"
+            ],
+            "Floor 2": [
+              "Bridge Street"
+            ],
+            "My floor isn't listed.": []
+          },
+          "phoneNumber": null,
+          "addressfromAccount": false,
+          "currentFloorNumber": "",
+          "eventCorrelationId": "300414906773_1655730838224_1",
+          "verifyE911Address": false,
+          "polylines": {},
+          "launchType": "FCL",
+          "apartmentNumberRequired": false,
+          "floorPlanAvailable": false,
+          "addressMapStatus": "Data found",
+          "maxFloor": "2",
+          "buildingDetails": [
+            {
+              "height": "21.24033838167306",
+              "numberOfFloors": "2",
+              "coordinatesLst": "[[[-118.217504914678, 34.0521699076397], [-118.217661900361, 34.0519275286841], [-118.217765662442, 34.0519741064654], [-118.217756919409, 34.0519874469637], [-118.217771936012, 34.0519942406934], [-118.217730684547, 34.0520583040622], [-118.217719806556, 34.0520535430617], [-118.217613083579, 34.0522185156298], [-118.217504914678, 34.0521699076397]]]",
+              "buildingId": "iv_losangeles_409001"
+            },
+            {
+              "height": "19.879432551580702",
+              "numberOfFloors": "2",
+              "coordinatesLst": "[[[-118.217438086368, 34.0521071853966], [-118.217510910477, 34.0519956544351], [-118.217527006701, 34.0520029784754], [-118.217541780464, 34.0519802915242], [-118.217583681925, 34.0519991712136], [-118.217568906881, 34.05202176802], [-118.217580151184, 34.0520271565424], [-118.217507953709, 34.0521387714989], [-118.217438086368, 34.0521071853966]]]",
+              "buildingId": "iv_losangeles_408790"
+            },
+            {
+              "height": "18.76439495657587",
+              "numberOfFloors": "2",
+              "coordinatesLst": "[[[-118.217632895551, 34.0519483730558], [-118.217690410914, 34.0518596244138], [-118.217697604629, 34.0518628891561], [-118.217638830983, 34.051951109292], [-118.217632895551, 34.0519483730558]]]",
+              "buildingId": "iv_losangeles_407169"
+            },
+            {
+              "height": "17.60170939010523",
+              "numberOfFloors": "2",
+              "coordinatesLst": "[[[-118.217615341751, 34.0518765973308], [-118.217646565736, 34.0518297641988], [-118.21766365225, 34.0518376193858], [-118.217658754449, 34.0518449710635], [-118.217690410914, 34.0518596244138], [-118.217632895551, 34.0519483730558], [-118.217592876382, 34.0519299255488], [-118.217625323883, 34.0518811868909], [-118.217615341751, 34.0518765973308]]]",
+              "buildingId": "iv_losangeles_409286"
+            }
+          ],
+          "uberPinEligible": true,
+          "intersectionCoordinatesLst": null,
+          "coveragePercentage": null,
+          "equipType": "HIGH",
+          "addressDescriptorList": [
+            {
+              "floor": "1",
+              "descriptor": "Bridge Street",
+              "type": null,
+              "equipType": "HIGH",
+              "installType": "INDOOR",
+              "bundleList": [
+                {
+                  "power": "HIGH",
+                  "predictionName": "5GNR_28GHz_CPE_LO_30U_RSRP_GEMINI_ID",
+                  "installType": "INDOOR",
+                  "bundleName": "5GHomeGeminiSelfSetup,5GHomeGeminiProfSetup"
+                }
+              ],
+              "bundleNames": [
+                "5GHomeGeminiSelfSetup",
+                "5GHomeGeminiProfSetup"
+              ]
+            },
+            {
+              "floor": "2",
+              "descriptor": "Bridge Street",
+              "type": null,
+              "equipType": "HIGH",
+              "installType": "INDOOR",
+              "bundleList": [
+                {
+                  "power": "HIGH",
+                  "predictionName": "5GNR_28GHz_CPE_LO_30U_RSRP_GEMINI_ID",
+                  "installType": "INDOOR",
+                  "bundleName": "5GHomeGeminiSelfSetup,5GHomeGeminiProfSetup"
+                }
+              ],
+              "bundleNames": [
+                "5GHomeGeminiSelfSetup",
+                "5GHomeGeminiProfSetup"
+              ]
+            }
+          ],
+          "bundleNames": [
+            "5GHomeGeminiSelfSetup",
+            "5GHomeGeminiProfSetup"
+          ],
+          "addressId": "300414906773",
+          "subLocationId": "300039729605",
+          "qualified4GHome": false,
+          "qualifiedCBand": false,
+          "preOrder5GFlow": false,
+          "preOrderLaunchDate": null,
+          "isExpiredCart": false,
+          "isStreetSelected": false,
+          "isRevisitor": false,
+          "uberPinQualificatioIsRequired": true,
+          "displayStreetSelection": false,
+          "mucOfferEligible": false,
+          "storeSessionId": "POE-D-07608dc3-96bc-4c2b-80d8-ccdb3c20956c{as3}"
+        },
+        "errorMap": null,
+        "statusMessage": "Service completed Successfully.",
+        "statusCode": "00"
+      }
+    }
+  ]
