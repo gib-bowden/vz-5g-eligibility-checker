@@ -19,6 +19,13 @@ type ParsedAddress = {
   sec_unit_num?: string;
 };
 
+type ResultRow = {
+  inputAddress: string;
+  verizonAddress: string;
+  eligible5g: boolean;
+  eligibleLTE: boolean;
+};
+
 type EligiblityResponse = {
   output: {
     qualified: boolean;
@@ -73,7 +80,9 @@ type RequestBody = {
   address2: string;
 };
 
-export const processFile = async (filePath: string): Promise<void> => {
+export const processFile = async (
+  filePath: string
+): Promise<string | undefined> => {
   const buf = readFileSync(filePath);
   const workbook = read(buf);
   // TODO: Could also do a for each sheet, if each sheet represents a market
@@ -95,40 +104,47 @@ export const processFile = async (filePath: string): Promise<void> => {
       }
     })
     .filter((location) => location);
-  console.log({ locations });
 
   const requests: Promise<AxiosResponse<EligiblityResponse>>[] = [];
   for (const location of locations) {
     const address: ParsedAddress = parser.parseLocation(location);
-    console.log({ address });
     const requestBody: RequestBody = {
       address1: `${address.number} ${address.street} ${address.type}`,
-      city: address.city,
-      state: address.state,
-      zipcode: address.zip,
       address2: address.sec_unit_type
         ? `${address.sec_unit_type} ${address.sec_unit_num}`
         : "",
+      city: address.city,
+      state: address.state,
+      zipcode: address.zip,
     };
-    // requests.push(
-    //   axios.post<EligiblityResponse>(
-    //     "https://www.verizon.com/vfw/v1/check5GAvailability",
-    //     requestBody
-    //   )
-    // );
+    requests.push(
+      axios.post<EligiblityResponse>(
+        "https://www.verizon.com/vfw/v1/check5GAvailability",
+        requestBody
+      )
+    );
   }
 
-  let results: AxiosResponse<EligiblityResponse, any>[];
-  // try {
-  //   results = await Promise.all(requests);
-  // } catch (error) {
-  //   console.log({ error });
-  // }
+  let results: AxiosResponse<EligiblityResponse>[];
+  try {
+    results = await Promise.all(requests);
+  } catch (error) {
+    console.log({ error });
+    return;
+  }
 
-  results = mockData;
-  const rowData = results.map((result, i) => {
+  // const results = mockData;
+  const rowData = results.map((result, i): ResultRow => {
+    console.log(locations[i], { data: result?.data });
+    if (!result?.data?.output?.addressId) {
+      return {
+        inputAddress: locations[i],
+        verizonAddress: "not found",
+        eligible5g: null,
+        eligibleLTE: null,
+      };
+    }
     const {
-      addressId,
       addressLine1,
       addressLine2,
       city,
@@ -140,7 +156,6 @@ export const processFile = async (filePath: string): Promise<void> => {
     } = result.data.output;
     return {
       inputAddress: locations[i],
-      found: !!addressId,
       verizonAddress: `${addressLine1} ${addressLine2} ${city} ${state} ${zipCode}`,
       eligible5g: qualified || qualifiedCBand,
       eligibleLTE: qualified4GHome,
@@ -152,27 +167,31 @@ export const processFile = async (filePath: string): Promise<void> => {
   utils.book_append_sheet(workbook, resultSheet, `${firstSheetName} Results`);
   const stats = {
     count: results.length,
-    found: results.filter((result) => result.data.output.addressId).length,
+    found: results.filter((result) => result.data?.output?.addressId).length,
     eligible5G: results.filter(
       (result) =>
-        result.data.output.qualifiedCBand || result.data.output.qualified
+        result.data?.output?.qualifiedCBand || result.data?.output?.qualified
     ).length,
-    eligibleLTE: results.filter((result) => result.data.output.qualified4GHome)
-      .length,
+    eligibleLTE: results.filter(
+      (result) => result.data?.output?.qualified4GHome
+    ).length,
     unitInputRequired: results.filter(
-      (result) => result.data.output.apartmentNumberRequired
+      (result) => result.data?.output?.apartmentNumberRequired
     ).length,
   };
   const statsSheet = utils.json_to_sheet([stats]);
   utils.book_append_sheet(workbook, statsSheet, `${firstSheetName} Stats`);
-  const downloadsPath = app.getPath("downloads");
   const filePathArray = filePath.split("/");
   const originalFileName =
     filePathArray[filePathArray.length - 1].split(".")[0];
+  const newFilePath = `${app.getPath(
+    "downloads"
+  )}/${originalFileName}_processed.xlsx`;
 
   try {
     const data = write(workbook, { type: "buffer" });
-    writeFileSync(`${downloadsPath}/${originalFileName}_processed.xlsx`, data);
+    writeFileSync(newFilePath, data);
+    return newFilePath;
   } catch (error) {
     console.log(error);
   }

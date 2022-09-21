@@ -229,5 +229,67 @@
         "statusMessage": "Service completed Successfully.",
         "statusCode": "00"
       }
+    },
+    {
+      "data": {
+        "errorMap": "{99=Your request could not be processed at this time. Please try again later.}",
+        "output": null,
+        "statusCode": "01",
+        "statusMessage": "Service Failed."
+      }
+    },
+    {
+      "data": {
+        "output": {
+          "qualified": false,
+          "reservation": null,
+          "emailAddress": null,
+          "addressLine1": "503 MILWAUKEE UNDEFIND AVE",
+          "addressLine2": "",
+          "city": "LOS ANGELES",
+          "state": "CA",
+          "zipCode": "90042",
+          "reasonCode": "Non_Eligible",
+          "addressType": null,
+          "installType": null,
+          "floorToStreetsMap": {},
+          "phoneNumber": null,
+          "addressfromAccount": false,
+          "currentFloorNumber": null,
+          "eventCorrelationId": null,
+          "verifyE911Address": false,
+          "polylines": {},
+          "launchType": null,
+          "apartmentNumberRequired": false,
+          "floorPlanAvailable": false,
+          "addressMapStatus": null,
+          "maxFloor": null,
+          "buildingDetails": null,
+          "uberPinEligible": false,
+          "intersectionCoordinatesLst": null,
+          "coveragePercentage": null,
+          "equipType": null,
+          "addressDescriptorList": null,
+          "bundleNames": null,
+          "addressId": null,
+          "subLocationId": null,
+          "qualified4GHome": false,
+          "qualifiedCBand": false,
+          "preOrder5GFlow": false,
+          "preOrderLaunchDate": null,
+          "isExpiredCart": false,
+          "isStreetSelected": false,
+          "isRevisitor": false,
+          "uberPinQualificatioIsRequired": true,
+          "displayStreetSelection": false,
+          "mucOfferEligible": false,
+          "storeSessionId": "POE-D-0bac6852-e5e2-4850-b44e-0cf2790ba0e6{s3}"
+        },
+        "errorMap": null,
+        "statusMessage": "Service completed Successfully.",
+        "statusCode": "00"
+      }
     }
+
+    
   ]
